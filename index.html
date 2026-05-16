@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wake Up Generation - Shopping - Unit 9</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-copy">
+        <h1>🛍️ Wake Up Generation - Shopping</h1>
+        <p>Unit 9 · Dress your character &amp; shop for the perfect outfit!</p>
+      </div>
+      <div class="header-actions">
+        <button class="ghost-button" id="resetButton" type="button">Reset</button>
+        <button class="buy-button" id="buyButton" type="button">Buy outfit</button>
+      </div>
+    </header>
+
+    <main class="game-shell">
+      <aside class="shop-panel" aria-label="Clothing shop">
+        <div class="avatar-choice">
+          <span>Choose avatar</span>
+          <div class="segmented" role="group" aria-label="Choose avatar">
+            <button class="segment active" data-avatar="girl" type="button">Girl</button>
+            <button class="segment" data-avatar="boy" type="button">Boy</button>
+          </div>
+        </div>
+
+        <nav class="category-tabs" id="categoryTabs" aria-label="Categories"></nav>
+
+        <section class="items-panel">
+          <div class="items-heading">
+            <h2 id="categoryTitle">Tops</h2>
+            <button class="none-button" id="noneButton" type="button">None</button>
+          </div>
+          <div class="items-grid" id="itemsGrid" aria-live="polite"></div>
+        </section>
+      </aside>
+
+      <section class="stage" aria-label="Avatar dressing area">
+        <div class="instructions">
+          <strong>Drag clothes to the avatar.</strong>
+          <span>Change items anytime. Drop clothes on the bin to remove them.</span>
+        </div>
+
+        <div class="avatar-card" id="avatarDropZone">
+          <div class="avatar" id="avatar">
+            <div class="hair hair-girl" data-avatar-part="hair"></div>
+            <div class="head"></div>
+            <div class="neck"></div>
+            <div class="body"></div>
+            <div class="arm arm-left"></div>
+            <div class="arm arm-right"></div>
+            <div class="leg leg-left"></div>
+            <div class="leg leg-right"></div>
+            <div class="foot foot-left"></div>
+            <div class="foot foot-right"></div>
+
+            <div class="wearable slot-hat" data-slot="hat"></div>
+            <div class="wearable slot-top" data-slot="top"></div>
+            <div class="wearable slot-dress" data-slot="dress"></div>
+            <div class="wearable slot-bottom" data-slot="bottom"></div>
+            <div class="wearable slot-belt" data-slot="belt"></div>
+            <div class="wearable slot-socks" data-slot="socks"></div>
+            <div class="wearable slot-shoes" data-slot="shoes"></div>
+          </div>
+        </div>
+
+        <div class="trash-zone" id="trashZone" aria-label="Remove clothing">
+          <span class="trash-icon">x</span>
+          <span>Delete</span>
+        </div>
+      </section>
+
+      <aside class="receipt-panel" aria-label="Shopping cart">
+        <h2>Shopping Cart</h2>
+        <ul class="cart-list" id="cartList"></ul>
+        <div class="total-row">
+          <span>Total</span>
+          <strong id="totalPrice">$0</strong>
+        </div>
+        <p class="cart-note">Prices are in dollars.</p>
+      </aside>
+    </main>
+
+    <section class="final-screen" id="finalScreen" aria-hidden="true">
+      <div class="runway">
+        <button class="close-final" id="closeFinal" type="button" aria-label="Close">x</button>
+        <p class="spark">Shopping complete!</p>
+        <h2 id="finalMessage">Great combo!</h2>
+        <div class="final-avatar-wrap" id="finalAvatarWrap"></div>
+        <p id="finalTotal">Total: $0</p>
+        <button class="buy-button" id="playAgainButton" type="button">Style another outfit</button>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
